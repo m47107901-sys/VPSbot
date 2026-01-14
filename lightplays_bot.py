@@ -1106,7 +1106,7 @@ async def create_vps_command(ctx, memory: int, cpu: int, disk: int, owner: disco
                 embed.add_field(name="🔑 Root Password", value=f"||{root_password}||", inline=False)
             embed.add_field(name="🔒 Tmate Session", value=f"```{ssh_session_line}```", inline=False)
             embed.add_field(name="🔌 Direct SSH", value=f"```ssh {username}@<server-ip>```", inline=False)
-            embed.add_field(name="ℹ️ Note", value=This is a Shadow Nodes VPS instance. Neofetch ram is not real because the vps is dc bot deployed.", inline=False)
+            embed.add_field(name="ℹ️ Note", value="This is a Shadow Nodes VPS instance. You can install and configure additional packages as needed.", inline=False)
             
             await owner.send(embed=embed)
             await status_msg.edit(content=f"✅ Shadow Nodes VPS creation successful! VPS has been created for {owner.mention}. Check your DMs for connection details.")
@@ -2654,4 +2654,5 @@ if __name__ == "__main__":
     except Exception as e:
         logger.error(f"Bot crashed: {e}")
         traceback.print_exc()
+
 
