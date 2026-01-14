@@ -799,7 +799,7 @@ async def on_ready():
                     logger.error(f"Error starting container: {e}")
     
     try:
-        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Lightplays VPS"))
+        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Shadow Node Link=https://discord.gg/CByfR5zkP4"))
         synced_commands = await bot.tree.sync()
         logger.info(f"Synced {len(synced_commands)} slash commands")
     except Exception as e:
@@ -2654,5 +2654,6 @@ if __name__ == "__main__":
     except Exception as e:
         logger.error(f"Bot crashed: {e}")
         traceback.print_exc()
+
 
 
