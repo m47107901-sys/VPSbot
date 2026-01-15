@@ -2428,7 +2428,7 @@ class OSSelectionView(ui.View):
                     # Send new SSH details to owner
                     try:
                         owner = await bot.fetch_user(int(vps["created_by"]))
-                        embed = discord.Embed(title=f"Lightplays VPS Reinstalled - {self.vps_id}", color=discord.Color.blue())
+                        embed = discord.Embed(title=f"Shadow Nodes VPS Reinstalled - {self.vps_id}", color=discord.Color.blue())
                         embed.add_field(name="New OS", value=image, inline=True)
                         embed.add_field(name="New SSH Session", value=f"```{ssh_session_line}```", inline=False)
                         embed.add_field(name="New SSH Password", value=f"||{ssh_password}||", inline=False)
@@ -2438,10 +2438,10 @@ class OSSelectionView(ui.View):
             except Exception as e:
                 logger.error(f"Warning: Failed to start tmate session: {e}")
 
-            await status_msg.edit(content="✅ Lightplays VPS reinstalled successfully!")
+            await status_msg.edit(content="✅ Shadow Nodes VPS reinstalled successfully!")
             
             try:
-                embed = discord.Embed(title=f"Lightplays VPS Management - {self.vps_id}", color=discord.Color.green())
+                embed = discord.Embed(title=f"Shadow Nodes VPS Management - {self.vps_id}", color=discord.Color.green())
                 embed.add_field(name="Status", value="🟢 Running", inline=True)
                 embed.add_field(name="Memory", value=f"{vps['memory']}GB", inline=True)
                 embed.add_field(name="CPU", value=f"{vps['cpu']} cores", inline=True)
@@ -2614,7 +2614,7 @@ async def transfer_vps_command(ctx, vps_id: str, new_owner: discord.Member):
         await ctx.send(f"✅ Shadow Nodes VPS {vps_id} has been transferred from {ctx.author.name} to {new_owner.name}!")
 
         try:
-            embed = discord.Embed(title="Lightplays VPS Transferred to You", color=discord.Color.green())
+            embed = discord.Embed(title="Shadow Nodes VPS Transferred to You", color=discord.Color.green())
             embed.add_field(name="VPS ID", value=vps_id, inline=True)
             embed.add_field(name="Previous Owner", value=ctx.author.name, inline=True)
             embed.add_field(name="Memory", value=f"{vps['memory']}GB", inline=True)
@@ -2654,6 +2654,7 @@ if __name__ == "__main__":
     except Exception as e:
         logger.error(f"Bot crashed: {e}")
         traceback.print_exc()
+
 
 
 
